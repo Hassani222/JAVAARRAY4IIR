@@ -1,9 +1,9 @@
 # Collections en Java 
 
-**Auteur : A. Larhlimi**
+*Auteur : A. Larhlimi*
 
-*Destiné aux étudiants de 4 IIR - EMSI Casablanca*
-
+Destiné aux étudiants de 4 IIR - EMSI Casablanca
+Fait par HASSANI SAFAA
 ***
 
 ## Introduction
@@ -20,11 +20,11 @@ Comprendre ces collections permet d'écrire des programmes plus performants, mai
 
 Le framework Collections repose sur une architecture hiérarchique d'interfaces :
 
-- **Collection** : Interface de base pour les groupes d'éléments.
-- **List** : Liste ordonnée pouvant accepter des doublons.
-- **Set** : Ensemble d'éléments uniques, sans ordre précis.
-- **Queue** : File d'attente, gestion FIFO (First In First Out).
-- **Map** : Association clé-valeur, pour un accès rapide via des clés.
+- *Collection* : Interface de base pour les groupes d'éléments.
+- *List* : Liste ordonnée pouvant accepter des doublons.
+- *Set* : Ensemble d'éléments uniques, sans ordre précis.
+- *Queue* : File d'attente, gestion FIFO (First In First Out).
+- *Map* : Association clé-valeur, pour un accès rapide via des clés.
 
 Diagramme simplifié :
 
@@ -33,7 +33,7 @@ Diagramme simplifié :
 
 
 
-*Schéma de sélection des collections Java*
+Schéma de sélection des collections Java
 
 
 
@@ -81,10 +81,10 @@ ArrayList est une implémentation dynamique de tableau redimensionnable. Elle aj
 
 ### Exemple de projet : Gestion d'une collection de Livres
 
-**Descriptif :**
+*Descriptif :*
 Ce projet simule la gestion d’une petite bibliothèque. Chaque livre est représenté par une classe et stocké dans une ArrayList. Le gestionnaire permet d’ajouter des livres et d’afficher la collection, illustrant l’utilisation pratique d’une ArrayList pour organiser et parcourir des objets.
 
-```java
+java
 import java.util.ArrayList;
 
 public class Livre {
@@ -136,7 +136,7 @@ class GestionBibliotheque {
         gb.afficherLivres();
     }
 }
-```
+
 
 
 ***
@@ -149,10 +149,10 @@ LinkedList est une structure de données en liste chaînée doublement liée per
 
 ### Comparaison avec ArrayList
 
-- **LinkedList**
+- *LinkedList*
     - Meilleure pour insertions ou suppressions fréquentes au milieu.
     - Accès lent par index (O(n)).
-- **ArrayList**
+- *ArrayList*
     - Meilleur accès aléatoire rapide (O(1)).
     - Insertions/suppressions coûteuses au milieu.
 
@@ -162,10 +162,10 @@ LinkedList est une structure de données en liste chaînée doublement liée per
 
 ### Exemple de projet : Gestion de Tâches
 
-**Descriptif :**
+*Descriptif :*
 Ce projet met en œuvre la gestion d’une liste de tâches à accomplir. Chaque tâche est un objet, pouvant être marquée comme terminée. La LinkedList permet d’ajouter, parcourir et terminer la première tâche facilement, montrant son efficacité pour manipuler des listes dont l’ordre d’exécution importe.
 
-```java
+java
 import java.util.LinkedList;
 
 public class Tache {
@@ -214,17 +214,25 @@ class GestionTaches {
         gt.afficherTaches();
     }
 }
-```
+
 
 
 ### Quiz sur les Listes (ArrayList et LinkedList)
 
 1. Quelle implémentation offre un accès en temps constant par index ?
+   Réponse : ArrayList offre un accès en temps constant (O(1)) par index.
 2. Quelles sont les complexités d'ajout au milieu d'un ArrayList vs LinkedList ?
+   Réponse : 
+     - Pour un ArrayList, l'ajout au milieu a une complexité de O(n) en raison du décalage des éléments.
+     - Pour une LinkedList, l'ajout au milieu a une complexité de O(n) pour trouver l'emplacement, mais l'ajout en lui-même est O(1) une fois l'emplacement trouvé.
 3. Quelle structure utilise des pointeurs pour gérer les éléments ?
+    Réponse : LinkedList utilise des pointeurs pour gérer les éléments, chaque nœud pointant vers le nœud suivant et/ou précédent.
 4. Peut-on insérer des doublons dans une List ?
+    Réponse : Oui, on peut insérer des doublons dans une List, que ce soit une ArrayList ou une LinkedList.
 5. Quelles sont les différences majeures entre ArrayList et LinkedList ?
-
+    Réponse : 
+     - ArrayList utilise un tableau dynamique pour stocker les éléments, offrant un accès rapide par index mais des performances moindres pour les insertions/suppressions          au milieu.
+     - LinkedList utilise une structure de nœuds avec des pointeurs, permettant des insertions/suppressions efficaces, mais un accès par index plus lent.
 ***
 
 ## Interface Set
@@ -259,10 +267,10 @@ Cette structure offre un accès rapide (en moyenne O(1)) pour ajout, recherche e
 
 ### Exemple de projet : Gestion des Étudiants
 
-**Descriptif :**
+*Descriptif :*
 Ce projet illustre la gestion d’un ensemble d’étudiants dans une promotion en utilisant un HashSet. Chaque étudiant est identifié par son nom et son numéro. L’exemple démontre la nécessité de redéfinir equals() et hashCode() pour garantir l’unicité, évitant ainsi les doublons lors des ajouts.
 
-```java
+java
 import java.util.HashSet;
 import java.util.Objects;
 
@@ -319,7 +327,7 @@ class GestionEtudiants {
         ge.afficherEtudiants();
     }
 }
-```
+
 
 
 ***
@@ -332,10 +340,10 @@ LinkedHashSet est une extension de HashSet qui maintient l'ordre d'insertion des
 
 ### Exemple court
 
-**Descriptif :**
+*Descriptif :*
 Cet exemple simple montre comment LinkedHashSet garantit l'unicité des éléments tout en gardant l'ordre dans lequel ils sont ajoutés.
 
-```java
+java
 import java.util.LinkedHashSet;
 
 public class ExempleLinkedHashSet {
@@ -350,7 +358,7 @@ public class ExempleLinkedHashSet {
         }
     }
 }
-```
+
 
 
 ***
@@ -375,10 +383,10 @@ On peut définir un Comparator pour personnaliser l'ordre.
 
 ### Exemple avec l'interface Comparable
 
-**Descriptif :**
+*Descriptif :*
 Ce projet présente une collection ordonnée de personnes selon leur nom. Chaque personne est stockée dans un TreeSet, qui utilise l’ordre naturel défini par l’interface Comparable. Il met en avant la gestion automatique de l’ordre et l’élimination des doublons par le TreeSet.
 
-```java
+java
 import java.util.TreeSet;
 
 public class Personne implements Comparable<Personne> {
@@ -411,7 +419,7 @@ public class Personne implements Comparable<Personne> {
         }
     }
 }
-```
+
 
 
 ***
@@ -420,10 +428,10 @@ public class Personne implements Comparable<Personne> {
 
 ### Exemple avec un Comparator
 
-**Descriptif :**
+*Descriptif :*
 Ici, la collection de personnes est triée par âge grâce à un Comparator personnalisé dans le TreeSet. Cet exemple montre comment adapter l’ordre de tri des éléments selon les critères choisis, en personnalisant la logique de comparaison.
 
-```java
+java
 import java.util.TreeSet;
 import java.util.Comparator;
 
@@ -459,7 +467,7 @@ public class Personne {
         }
     }
 }
-```
+
 
 
 ### Quiz sur les Sets (HashSet, LinkedHashSet, TreeSet)
@@ -493,10 +501,10 @@ PriorityQueue est une implémentation de Queue où les éléments sont ordonnés
 
 ### Exemple
 
-**Descriptif :**
+*Descriptif :*
 Cet exemple montre comment les éléments d’une PriorityQueue sont triés selon leur ordre naturel. Chaque retrait se fait sur l’élément de plus haute priorité, ici l’entier le plus petit.
 
-```java
+java
 import java.util.PriorityQueue;
 
 public class ExemplePriorityQueue {
@@ -511,7 +519,7 @@ public class ExemplePriorityQueue {
         }
     }
 }
-```
+
 
 
 ***
@@ -535,10 +543,10 @@ ArrayDeque est une implémentation optimisée de Deque basée sur un tableau dyn
 
 ### Exemple
 
-**Descriptif :**
+*Descriptif :*
 Ce projet illustre l’usage d’une file doublement terminée. On insère et retire des éléments aux deux extrémités, ce qui est efficace pour implémenter des structures comme les piles (LIFO) ou files (FIFO).
 
-```java
+java
 import java.util.ArrayDeque;
 
 public class ExempleArrayDeque {
@@ -551,7 +559,7 @@ public class ExempleArrayDeque {
         System.out.println(adq.pollLast()); // Dernier
     }
 }
-```
+
 
 
 ### Quiz sur les Queues et Deques
@@ -596,10 +604,10 @@ Avantages : accès rapide (moyenne O(1)) pour insertion, suppression, recherche.
 
 ### Exemple de projet : Association Employé-Projet
 
-**Descriptif :**
+*Descriptif :*
 Ce projet gère l’attribution de projets à des employés dans une entreprise via une HashMap. Chaque employé est associé à un projet spécifique, permettant un accès rapide à cette relation clé-valeur. Il met en évidence l’utilité de HashMap pour stocker des associations personnalisées et assurer l’unicité des clés.
 
-```java
+java
 import java.util.HashMap;
 
 class Employe {
@@ -670,7 +678,7 @@ public class GestionProjet {
         gp.afficherAssociations();
     }
 }
-```
+
 
 
 ***
@@ -679,10 +687,10 @@ public class GestionProjet {
 
 ### Exemple
 
-**Descriptif :**
+*Descriptif :*
 Cet exemple montre comment mémoriser des associations entre des identifiants numériques et des chaînes de caractères tout en conservant l’ordre d’insertion grâce à LinkedHashMap. Il est utile pour les situations où la restitution de l’ordre d’ajout des données compte.
 
-```java
+java
 import java.util.LinkedHashMap;
 
 public class ExempleLinkedHashMap {
@@ -697,7 +705,7 @@ public class ExempleLinkedHashMap {
         }
     }
 }
-```
+
 
 
 ***
@@ -718,10 +726,10 @@ Les clés doivent implémenter Comparable ou un Comparator doit être fourni.
 
 ### Exemple avec clé personnalisée
 
-**Descriptif :**
+*Descriptif :*
 Ce projet crée une collection de codes de projet associés à des noms de projets, triés automatiquement par code grâce à TreeMap. La clé étant personnalisée, on doit implémenter Comparable pour permettre le tri et garantir l’unicité dans l’arbre.
 
-```java
+java
 import java.util.TreeMap;
 import java.util.Map;
 
@@ -768,7 +776,7 @@ public class GestionTreeMap {
         }
     }
 }
-```
+
 
 
 ### Quiz sur les Maps
@@ -812,7 +820,3 @@ Ce document est prêt à être diffusé, imprimé, ou converti en PDF pour votre
 
 
 ![](collection.jpg)
-
-
-
-
